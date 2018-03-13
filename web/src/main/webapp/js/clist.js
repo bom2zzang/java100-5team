@@ -20,6 +20,8 @@ var tbody = $('#list > tbody');
 
 var modalh = $('#modalsample > h5');
 
+
+
 // 검색조건 함수 -------------------------------------------------
 function PantsSize(value){
     
@@ -383,8 +385,13 @@ function modalViewFunction(writerNo,contentNo) {
         success: (result) => {
          
             codyView.html(template3Engine(result));
+            if(result.login.m_no == 0){
+                $('#loginmodal').modal('show')
+            }else{
+                $('.bd-example-modal-lg').modal('show')
+            }
             
-            $('.bd-example-modal-lg').modal('show')
+           
             
             /*--------------------------- 덧글등록  ---------------------------------------------*/
             var commentBtn =  $('#commentBtn');
@@ -404,22 +411,6 @@ function modalViewFunction(writerNo,contentNo) {
                     dataType: 'json',
                     success: (result) => {
                       
-                        $.ajax('../json/friend/list', {
-                            data: {
-                                codyNo : contentNo,
-                                codyWno : writerNo
-                            },
-                            dataType: 'json',
-                            success: (result) => {
-                             
-                                codyView.html(template3Engine(result));
-                                
-                                $('.bd-example-modal-lg').modal('show');
-                            },
-                            error: () => {
-                                console.log('덧글 실행 오류1!');
-                            }
-                        });
                     },
                     error: () => {
                         console.log('덧글 실행 오류2!');
@@ -484,7 +475,18 @@ function followFunction(writerNo) {
         },
         dataType: 'json',
         success: (result) => {
-            location.href = 'list.html';
+            
+            console.log(result.login);
+            
+            if(result.login.m_no == 0){
+                $('#loginmodal').modal('show')
+                
+            }else{
+                
+                location.href = 'list.html';
+            }
+            
+            
     },
     error: () => {
         window.alert('서버실행오류');
@@ -526,12 +528,19 @@ function uplikedcountFunction(contentNo) {
         dataType: 'json',
         success: function(result) {
            
+          if(result.login.m_no == 0){
+              $('#loginmodal').modal('show')
+          }
+          
+         load(1);
             const finder = $('#js-likebtn' + contentNo);
            finder.removeClass('js-button').addClass('js-hoverbutton');
       
     },
     error: () => {
-        window.alert('서버실행오류');
+      
+        window.alert('좋아요실행오류');
+        
     }
       
 });

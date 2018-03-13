@@ -205,26 +205,30 @@ public class CodyController {
             @ModelAttribute(value = "loginUser") Member loginUser,
             Liked liked) throws Exception {
 
+        
+        
         liked.setCo_no(cody.getCo_no());
         liked.setM_no(loginUser.getM_no());
         liked.setName(loginUser.getId());
         liked.setLikedcount(+1); 
         
+        HashMap<String, Object> result = new HashMap<>();
         cody.setLiked(liked);
         System.out.println("코디 getliked" + cody.getLiked());
+       
+        result.put("login" , loginUser);
         
-        codyService.liked(cody);
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("like" , liked);
         try {
-            codyService.liked(cody);
+        codyService.liked(cody);
+        
+        result.put("like" , liked);
+        return result;   
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("중복으로 누를수 없습니다.");
-            
         }
-
         return result;
+     
     }
     
     

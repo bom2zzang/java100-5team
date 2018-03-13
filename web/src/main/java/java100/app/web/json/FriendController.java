@@ -93,6 +93,9 @@ public class FriendController {
         if ((totalCount % pageSize) > 0) {
             lastPageNo++;
         }
+       
+        
+        
         
         
  HashMap<String, Object> result = new HashMap<>();
@@ -109,6 +112,8 @@ public class FriendController {
 
 
             result.put("formcomment", cody_comment);
+            result.put("login" , loginUser);
+            
             
             Cody cody = codyService.get(co_noo);
             SimpleDateFormat time = new SimpleDateFormat("yyyy-MM-dd");
@@ -173,8 +178,14 @@ public class FriendController {
         friend.setM_no2(friendService.get(wr_no).getM_no());
         friend.setId(friendService.get(wr_no).getId());
         
+        result.put("login" , loginUser);
+        
         try {
-        friendService.add(friend);
+          if(loginUser.getM_no() != 0) {
+              friendService.add(friend);
+              
+          }
+        
         } catch (Exception e) {
             
            System.out.println("follow 컨트롤러 오류!");

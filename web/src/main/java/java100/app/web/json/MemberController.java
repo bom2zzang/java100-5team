@@ -31,7 +31,7 @@ public class MemberController {
     @Autowired MemberService memberService;
     @Autowired CodyService codyService;
     
-    static Logger logger = Logger.getLogger(MemberController.class);
+
     
     
     @RequestMapping("list")
@@ -43,12 +43,7 @@ public class MemberController {
             @RequestParam(value="al", required=false) String align
             ) throws Exception {
 
-        logger.fatal("fatal.......");
-        logger.error("error........");
-        logger.warn("warn.........");
-        logger.info("info.........");
-        logger.debug("debug..........");
-        logger.trace("trace ,........");
+   
         
         if (pageNo < 1) {
             pageNo = 1;
