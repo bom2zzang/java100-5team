@@ -33,6 +33,8 @@ $(() => {
      $.ajax('../json/member/' + arr[1], {
          dataType: 'json',
          success: (result) => {
+        	 
+        	
              noItem.val(result.data.m_no);
              nameItem.val(result.data.name);
              idItem.val(result.data.id);
@@ -158,7 +160,7 @@ addBtn.click (() => {
                 
                 return;
             }
-            location.href = "list.html";
+            location.href = "../cody/list.html";
         },
         error: () => {
             window.alert('서버 실행 오류');

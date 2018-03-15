@@ -53,7 +53,7 @@ public class CodyController {
   @RequestMapping("list")
     public Object list(
             @RequestParam(value = "pn", defaultValue = "1") int pageNo,
-            @RequestParam(value = "ps", defaultValue = "5") int pageSize,
+            @RequestParam(value = "ps", defaultValue = "20") int pageSize,
             @RequestParam(value = "words", required = false) String[] words,
             @RequestParam(value = "tops", required = false) String[] tops,
             @RequestParam(value = "pants", required = false) String[] pants,
@@ -68,8 +68,8 @@ public class CodyController {
             pageNo = 1;
         }
 
-        if (pageSize < 5 || pageSize > 15) {
-            pageSize = 5;
+        if (pageSize < 20 || pageSize > 15) {
+            pageSize = 20;
         }
 
         HashMap<String, Object> options = new HashMap<>();

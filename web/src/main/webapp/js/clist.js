@@ -388,7 +388,7 @@ function modalViewFunction(writerNo,contentNo) {
             if(result.login.m_no == 0){
                 $('#loginmodal').modal('show')
             }else{
-                $('.bd-example-modal-lg').modal('show')
+                $('#bgmodal').modal('show')
             }
             
            
@@ -587,10 +587,10 @@ trend.innerHTML = $('#TrendTemplete')[0].innerHTML;
 
 function HashTag(lang){
 
-    alert(lang);
+    /*alert(lang);*/
     
         var h_tag = lang;
-        console.log(h_tag);
+        /*console.log(h_tag);*/
 
          load(1, {
              h_tag: h_tag

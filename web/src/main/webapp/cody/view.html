@@ -106,12 +106,7 @@
         </div>
 </div>
 
-<div class='form-group row'>
-    <h5><label for='htag' class='col-sm-2 col-form-label'>해시태그</label></h5>
-    <div class='col-sm-10'>
-       <input class='form-control' id='htag' name='htag'>
-    </div>
-</div>
+
 
     
 <table class='table table-hover'>
@@ -204,9 +199,9 @@ var cbdeleteBtn = $('#cbdeleteBtn'),
     conts = $('#conts'),
     datetime = $('#datetime'),
     gender = $('#gender'),
-	topItem = $('#top'),
-	pants = $('#pants'),
-	htag = $('#htag'),
+   topItem = $('#top'),
+   pants = $('#pants'),
+   htag = $('#h_tag'),
     view = $('#views'),
     file = $('#file'),
     filelink = $('#filelink'),
@@ -235,7 +230,7 @@ $ (() => {
            pants.val(result.cody.pants);
            view.val(result.cody.views);
            liked.val(result.cody.likedcount);
-           hatag.val(resut.cody.htag);
+           htag.val(result.cody.h_tag);
            datetime.val(moment(result.cody.datetime).format('YYYY-MM-DD'));
             console.log(result);
             /*console.log("data 전송 성공"); */
