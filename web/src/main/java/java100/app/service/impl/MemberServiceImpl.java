@@ -78,4 +78,7 @@ public class MemberServiceImpl implements MemberService {
         return memberDao.findByEmail(email) == null;
     }
     
+    public Member get(String email) {
+        return memberDao.findByEmail(email);
+    }
 }

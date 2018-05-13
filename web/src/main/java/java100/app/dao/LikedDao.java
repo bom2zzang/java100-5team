@@ -10,7 +10,7 @@ public interface LikedDao {
     Liked findBylikeNo(int co_no);
     int insert(Liked liked);
     int deleteAllBylikedNo(int co_no);
-    
+    int deleteCancelBylikedNo(Liked liked);
     //Liked 테이블  코디 리스트에서 한번에 출력
     List<Liked> countAll();
 }

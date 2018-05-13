@@ -1,247 +1,253 @@
 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-      <a class="navbar-brand navbar-tit" href="../cody/list.html">FIT PLANET</a>
-
-      
-  <form class="form-inline">
-    <input id="words" name="words"
-           class="form-control form-control-sm mr-sm-2" type="search" 
-           placeholder="검색" aria-label="Search">
-    <button id="searchBtn" class="btn btn-sm btn-outline-success my-2 my-sm-0" 
-            type="button">Search</button>
-  </form>
-  
-<!--  로그인 모달  -->
-<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">FITPLANET
-                    LOGIN</h5>
-                <button type="button" class="close" data-dismiss="modal"
-                    aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <form method='post'>
-                <div class="modal-body">
-
-                    <div class='form-group row'>
-                        <label for='email' class='col-sm-2 col-form-label'>이메일</label>
-                        <div class='col-sm-10'>
-                            <input class='form-control' id='lemail' type='email' name='email'>
-                        </div>
-                    </div>
-
-                    <div class='form-group row'>
-                        <label for='pwd' class='col-sm-2 col-form-label'>암호</label>
-                        <div class='col-sm-10'>
-                            <input class='form-control' id='lpwd' type='password' name='pwd'>
-                        </div>
-                    </div>
-
-                    <div class='form-group row'>
-                        <div class='col-sm-2'></div>
-                        <div class='col-sm-10'>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="lsaveEmail"
-                                    name="saveEmail"> <label class="form-check-label"
-                                    for="saveEmail">이메일 저장</label>
-                            </div>
-                        </div>
-                    </div>
+	<a class="navbar-brand navbar-tit" href="../cody/list.html">FIT
+		PLANET</a>
 
 
-                    <div class="warning"></div>
-                    <div class="modal-footer">
-                        
-                        <button class='btn btn-primary btn-sm' id="loginBtn">LOGIN</button>
-                        <button class='btn btn-primary1 btn-sm' type="button" onclick="joinus()" id='joinBtn'>Join us</button>
-                        <!-- <button class='btn btn-sm' style='background-color: #FF0080'
+	<form class="form-inline">
+		<input id="words" name="words"
+			class="form-control form-control-sm mr-sm-2" type="search"
+			placeholder="검색" aria-label="Search">
+		<button id="searchBtn"
+			class="btn btn-sm btn-outline-success my-2 my-sm-0" type="button">Search</button>
+	</form>
+
+	<!--  로그인 모달  -->
+	<div class="modal fade" id="loginmodal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">FITPLANET
+						LOGIN</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<form method='post'>
+					<div class="modal-body">
+
+						<div class='form-group row'>
+							<label for='email' class='col-sm-2 col-form-label'>이메일</label>
+							<div class='col-sm-10'>
+								<input class='form-control' id='lemail' type='email'
+									name='email'>
+							</div>
+						</div>
+
+						<div class='form-group row'>
+							<label for='pwd' class='col-sm-2 col-form-label'>암호</label>
+							<div class='col-sm-10'>
+								<input class='form-control' id='lpwd' type='password' name='pwd'>
+							</div>
+						</div>
+
+						<div class='form-group row'>
+							<div class='col-sm-2'></div>
+							<div class='col-sm-10'>
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="lsaveEmail"
+										name="saveEmail"> <label class="form-check-label"
+										for="saveEmail">이메일 저장</label>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="warning"></div>
+						<div class="modal-footer">
+
+							<button class='btn btn-primary btn-sm' id="loginBtn">LOGIN</button>
+							<button class='btn btn-primary1 btn-sm' type="button"
+								onclick="joinus()" id='joinBtn'>Join us</button>
+								<fb:login-button scope="public_profile,email" 
+                        onlogin="checkLoginState();">
+							<!-- <button class='btn btn-sm' style='background-color: #FF0080'
                             data-dismiss="modal">Close</button>-->
-                    </div>
+						</div>
 
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
- 
-<!-- 회원가입 Modal -->
-               
-    <div class="modal fade bd-example-modal-lg" id="ddd2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      
-      
-      <hr>
-      <!--  회원가입 폼 시작 -->
-  
-<article class="container">
-  <div class="col-md-12">
-  <div class="page-header">
-      <h1 class='my-new'>회원가입 <small>FIT PLANET</small></h1>
-  </div>
-  <form class="form-horizontal" id="form" method='POST' enctype="multipart/form-data">
- <p style="text-align: center">(*) 항목은 반드시 입력해 주세요.</p>
-<!--  회원 권한 자동입력 회원은 1  -->
-<input type="hidden" id='level' name='level' value="1">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- 회원가입 Modal -->
+
+<!-- <div class="modal fade bd-example-modal-lg" id="ddd2" tabindex="-1"
+		role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
 
 
-<!--  회원 번호 출력은 안됨   --> 
-      
-<div class="form-group my-view">
-  <div class="col-sm-6">
-    <input class="form-control" style="display: none;" readonly id="m_no" type="text" name="m_no">
-  </div>
-</div>
+				<hr>
 
-<!--  이메일 입력-->
-  <div class="form-group">
-    <label class="col-sm-3 control-label" for="inputEmail">(*)이메일</label>
-  <div class="col-sm-6">
-    <input class="form-control" id="email" type="email" name="email" 
-    placeholder="ex)user@email.com" onkeyup="checkEmail()">
-  <div class="" id="validEmail"></div>
-  </div>
-  </div>  
-    
-  
-<!--  비밀번호 입력 -->  
-<div class="form-group">
-  <label class="col-sm-3 control-label" for="inputPassword">(*)비밀번호</label>
-<div class="col-sm-6">
-  <input class="form-control" id="pwd" type="password" name="pwd" placeholder="숫자, 특수문자 포함 8자 이상"
-  pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
-    required>
-     <p align="center" id="pwdinput">
-</div>
-</div>
-  <div class="form-group">
-        <label class="col-sm-3 control-label" for="inputPasswordCheck">(*)비밀번호 확인</label>
-       <div class="col-sm-6">
-        <input class="form-control" id="pwdcheck" type="password" placeholder="비밀번호 확인">
-        <p align="center" id="pwsame">
-       </div>
-    </div>
-   
-<!--  이름NAME 입력 --> 
-<div class="form-group">
-    <label class="col-sm-3 control-label" for="inputName">(*)이름</label>
-  <div class="col-sm-6">
-    <input class="form-control" id="name" type="text" name="name" placeholder="이름">
-  </div>
-</div>
-
-<!--  닉네임(ID)입력 -->
-<div class="form-group">
-    <label class="col-sm-3 control-label" for="inputId">(*)닉네임</label>
-  <div class="col-sm-6">
-    <input class="form-control" id="id" type="text" name="id" onkeyup="checkID()" placeholder="닉네임">
-     <div class="" id="validID"></div>
-  </div>
-</div>
-
-<!-- 성별 라디오창  -->
-<div class="form-group">
-<label class="col-sm-3 control-label"  for="inputName">(*)성별</label>
-   <div class="form-group btn-group"  style="margin-left:10px;" data-toggle="buttons" >
-  <label class="btn btn-default active">
-    <input type="radio" name="gender" value="남자" autocomplete="off" checked>남자
-  </label>
-  <label class="btn btn-default">
-    <input type="radio" name="gender"  value="여자" autocomplete="off"> 여자
-  </label>
-</div>
-</div>
-
-<!--  나이 입력창 -->
-<div class="form-group my-view">
-    <label class="col-sm-3 control-label" for="inputAge">나이</label>
-  <div class="col-sm-6">
-    <input class="form-control" id="age" type="text" name="age" placeholder="나이">
-  </div>
-</div>
-
-<!--  휴대전화 입력 -->
-<div class="form-group my-view">
-    <label class="col-sm-3 control-label" for="inputPhone">휴대전화</label>
-  <div class="col-sm-6">
-    <input class="form-control" id="phone" type="text" name="phone" placeholder="휴대전화">
-  </div>
-</div>
-
-<!--  한줄 코멘트 -->
-<div class="form-group my-view">
-    <label class="col-sm-3 control-label" for="inputIntro">한줄 코멘트</label>
-  <div class="col-sm-6">
-    <input class="form-control" id="intro" type="text" name="intro" placeholder="코멘트">
-  </div>
-</div>
+				<article class="container">
+					<div class="col-md-12">
+						<div class="page-header">
+							<h1 class='my-new'>
+								회원가입 <small>FIT PLANET</small>
+							</h1>
+						</div>
+						<form class="form-horizontal" id="form" method='POST'
+							enctype="multipart/form-data">
+							<p style="text-align: center">(*) 항목은 반드시 입력해 주세요.</p>
+							<input type="hidden" id='level' name='level' value="1">
 
 
+							<div class="form-group my-view">
+								<div class="col-sm-6">
+									<input class="form-control" style="display: none;" readonly
+										id="m_no" type="text" name="m_no">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="inputEmail">(*)이메일</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="email" type="email"
+										name="email" placeholder="ex)user@email.com"
+										onkeyup="checkEmail()">
+									<div class="" id="validEmail"></div>
+								</div>
+							</div>
 
 
-<div class="form-group">
-  <div class="col-sm-12 text-center">
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="inputPassword">(*)비밀번호</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="pwd" type="password" name="pwd"
+										placeholder="숫자, 특수문자 포함 8자 이상"
+										pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
+										required>
+									<p align="center" id="pwdinput">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="inputPasswordCheck">(*)비밀번호
+									확인</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="pwdcheck" type="password"
+										placeholder="비밀번호 확인">
+									<p align="center" id="pwsame">
+								</div>
+							</div>
 
-    <button id='addBtn' class="btn btn-primary my-new" type='button'>회원가입<i class="fa fa-check spaceLeft"></i></button>
-    <button id='deleteBtn' class="btn btn-primary my-view" type='button'>회원탈퇴<i class="fa fa-check spaceLeft"></i></button>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal">가입취소</button>
-    </div>
-</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="inputName">(*)이름</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="name" type="text" name="name"
+										placeholder="이름">
+								</div>
+							</div>
 
- </form> 
-<hr>
-</div>
-</article>
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="inputId">(*)닉네임</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="id" type="text" name="id"
+										onkeyup="checkID()" placeholder="닉네임">
+									<div class="" id="validID"></div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label" for="inputName">(*)성별</label>
+								<div class="form-group btn-group" style="margin-left: 10px;"
+									data-toggle="buttons">
+									<label class="btn btn-default active"> <input
+										type="radio" name="gender" value="남자" autocomplete="off"
+										checked>남자
+									</label> <label class="btn btn-default"> <input type="radio"
+										name="gender" value="여자" autocomplete="off"> 여자
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group my-view">
+								<label class="col-sm-3 control-label" for="inputAge">나이</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="age" type="text" name="age"
+										placeholder="나이">
+								</div>
+							</div>
+
+							<div class="form-group my-view">
+								<label class="col-sm-3 control-label" for="inputPhone">휴대전화</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="phone" type="text" name="phone"
+										placeholder="휴대전화">
+								</div>
+							</div>
+
+							<div class="form-group my-view">
+								<label class="col-sm-3 control-label" for="inputIntro">한줄
+									코멘트</label>
+								<div class="col-sm-6">
+									<input class="form-control" id="intro" type="text" name="intro"
+										placeholder="코멘트">
+								</div>
+							</div>
 
 
 
-<script src='../node_modules/jquery/dist/jquery.min.js'></script>
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></script> -->
-<script src='../node_modules/popper.js/dist/umd/popper.min.js'></script>
-<script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
-<script src='../js/hedermember.js'></script>      
-      
-      
-      
-      
-      </div>
-      
-    
-  </div>
-  
-</div>
-              
-               
+
+							<div class="form-group">
+								<div class="col-sm-12 text-center">
+
+									<button id='addBtn' class="btn btn-primary my-new"
+										type='button'>
+										회원가입<i class="fa fa-check spaceLeft"></i>
+									</button>
+									<button id='deleteBtn' class="btn btn-primary my-view"
+										type='button'>
+										회원탈퇴<i class="fa fa-check spaceLeft"></i>
+									</button>
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">가입취소</button>
+								</div>
+							</div>
+
+						</form>
+						<hr>
+					</div>
+				</article>
 
 
-<style>
+
+				<script src='../node_modules/jquery/dist/jquery.min.js'></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></script>
+				<script src='../node_modules/popper.js/dist/umd/popper.min.js'></script>
+				<script src='../node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+				<script src='../js/hedermember.js'></script>
+
+			</div>
+		</div>
+	</div> -->
 
 
+	<style>
 .btn-primary, .btn-primary1 {
-    background: #fff;
-    border: 1px solid #555;
-    color: #555;
+	background: #fff;
+	border: 1px solid #555;
+	color: #555;
 }
 
 .btn-primary:hover {
-    background: #ed4956;
-    border: 1px solid #ed4956;
-    color: #fff;
+	background: #ed4956;
+	border: 1px solid #ed4956;
+	color: #fff;
 }
 
 .btn-primary1:hover {
-    background: #aaa;
-    border: 1px solid #aaa;
-    color: #fff;
+	background: #aaa;
+	border: 1px solid #aaa;
+	color: #fff;
 }
 </style>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 var profile = $('#userphoto'),
     login = $('#loginBtn'),
     logout = $('#logoutBtn'),
@@ -316,5 +322,54 @@ $('#searchBtn').click(() => {
     })
    
 });
+
+function autoServerLogin(accessToken) {
+    $.getJSON(
+        '../json/auth/facebookLogin', 
+        {'accessToken': accessToken}, 
+        function(result) {
+          if (result.status == 'success') {
+              location.href = '../cody/list.html';
+          } else {
+             console.log('로그인 실패');
+          }
+    });
+}
+function statusChangeCallback(response) {
+  console.log(response);
+  if (response.status === 'connected') { // 로그인이 정상적으로 되었을 때,
+      autoServerLogin(response.authResponse.accessToken);
+  
+  } else { // 로그인이 되지 않았을 때,
+      console.log("로그인 되지 않았음");
+  }
+}
+  
+function checkLoginState() {
+    FB.getLoginStatus(function(response) { 
+      statusChangeCallback(response);
+    });
+}
+// 페이스북 자바스크립트 SDK 파일을 가져온 후에 호출될 함수를 등록한다.
+// => 즉 sdk.js 파일을 실행할 때 이 함수를 찾아 호출한다.
+// => 이 함수는 페이스북 API를 사용하기 전에 준비하는 작업을 수행한다.
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '191610451428556', // 개발자가 등록한 id
+      cookie     : true,  // enable cookies to allow the server to access 
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.12' // use graph api version 
+    });
+};
+    
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+
 
 </script>

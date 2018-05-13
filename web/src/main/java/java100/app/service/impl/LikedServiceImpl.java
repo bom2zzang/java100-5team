@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java100.app.dao.CodyDao;
 import java100.app.dao.LikedDao;
 import java100.app.domain.Liked;
 import java100.app.service.LikedService;
@@ -14,6 +15,7 @@ import java100.app.service.LikedService;
 public class LikedServiceImpl implements LikedService {
 
     @Autowired LikedDao likedDao;
+    @Autowired CodyDao codyDao;
     
     @Override
     public List<Liked> list(int co_no) {
@@ -43,7 +45,13 @@ public class LikedServiceImpl implements LikedService {
     public int delete(int co_no) {
        return likedDao.deleteAllBylikedNo(co_no);
     }
-
+    
+    @Override
+    public int cancel(Liked liked) {
+        
+        codyDao.deletelikedCount(liked.getCo_no());
+       return likedDao.deleteCancelBylikedNo(liked);
+    }
     
     //Liked 테이블  코디 리스트에서 한번에 출력
     @Override

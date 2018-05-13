@@ -224,10 +224,18 @@ public class CodyController {
         result.put("like" , liked);
         return result;   
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("중복으로 누를수 없습니다.");
+            
+            System.out.println(cody.getCo_no());
+            System.out.println(loginUser.getM_no());
+            
+            liked.setCo_no(cody.getCo_no());
+            liked.setM_no(loginUser.getM_no());
+            
+            likedService.cancel(liked);
+            
+            System.out.println(cody.getCo_no()+"중복으로 누를수 없습니다.");
+            return result;
         }
-        return result;
      
     }
     

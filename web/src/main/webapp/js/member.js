@@ -281,7 +281,7 @@ updateBtn.click (() => {
                 $('#pwd').focus();
                 return;
             } 
-                location.href = "list.html";
+                location.href = "../cody/list.html";
             },
         error: () => {
             window.alert('서버 실행 오류');

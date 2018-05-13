@@ -28,6 +28,10 @@
         where co_no = #{value}
     </delete>
     
+    <delete id="deleteCancelBylikedNo" parameterType="Liked">
+        delete from liked 
+        where co_no = #{co_no} and m_no= #{m_no}
+    </delete>
   
   <!-- Liked 테이블 리스트에서 한번에 출력 -->
        <select id="countAll" resultMap="likedMap" parameterType="map">

@@ -15,4 +15,6 @@ public interface MemberService {
     Member get(String email, String pwd);
     public boolean isMatchMemberEmail(String email);
     public boolean isMatchMemberId(String id);
+    
+    Member get(String email);
 }

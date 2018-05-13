@@ -40,6 +40,16 @@ $(document).ready(function () {
 </script>
 </head>
 <style>
+.modal-backdrop{
+z-index:1;
+background:rgba(0,0,0,0);
+}
+
+.modal-backdrop.show{
+opacity:0;
+display: none;
+}
+
 .modal-content {
    padding: 15px;
 }
@@ -657,8 +667,13 @@ position:relative;
                   
     <div class='form-group row row3'>
                     <label for='title' class='col-sm-2 col-form-label'>
-<img class="user-pic" style="border-radius:100%" width="35px" height="35px" src="../download/{{m_photo}}">
+{{#if m_photo}}
+    <img class="user-pic" style="border-radius:100%" width="35px" height="35px" src="../download/{{m_photo}}">
                           {{id}}</label>
+{{else}}
+ <img class="user-pic" style="border-radius:100%" width="35px" height="35px" src="../images/profile.gif">
+                          {{id}}</label>
+    {{/if}}
                     <div class='col-sm-10'>
                         <div>
                         <p style="color:black;">{{conts}}</p>
